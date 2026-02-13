@@ -23,7 +23,6 @@ in
     waybar
     swaynotificationcenter
     btop
-    obsidian
     pavucontrol
     alacritty
     easyeffects
@@ -33,23 +32,19 @@ in
     vlc
     gimp
     ffmpeg
-    godot
-    inputs.zen-browser.packages."${system}".default
-    blender
     fuzzel
-    satty
     (pkgs.discord.override { withVencord = false; })
     legcord
     vinegar
-    rofi
+    # rofi
     kdePackages.kdenlive
     vscode
-    proton-pass
-    proton-authenticator
+    godot
     # protonvpn-gui
-    unityhub
     openrgb-with-all-plugins
     lmms
+    prismlauncher
+    krita
   ];
 
   programs.obs-studio.enable = true;

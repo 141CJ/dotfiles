@@ -5,7 +5,6 @@
     catppuccin.url = "github:catppuccin/nix";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     stylix.url = "github:danth/stylix";
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
@@ -29,7 +28,6 @@
       spicetify-nix,
       catppuccin,
       stylix,
-      chaotic,
       ...
     }@inputs:
     let
@@ -49,7 +47,6 @@
           #inputs.nixvim.homeManagerModules.nixvim
           catppuccin.homeManagerModules.catppuccin
           stylix.homeManagerModules.stylix
-          chaotic.homeManagerModules.default
         ];
 
       };

@@ -12,13 +12,13 @@
     fzf
     playerctl
     wtype
-    cliphist
-    grim
-    slurp
-    jq
+    # cliphist
+    # grim
+    # slurp
+    # jq
     swww
     gamemode
-    hypridle
+    # hypridle
     xfce.tumbler
     nix-init
     winetricks
@@ -35,7 +35,6 @@
     killall
     lsd
     direnv
-    linux-wallpaperengine
     tmux
     gdu
     python3
