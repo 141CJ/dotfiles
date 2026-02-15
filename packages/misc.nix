@@ -43,7 +43,6 @@
     fastfetch
     gcc
     qemu
-    proton-cachyos_x86_64_v3
     xdg-utils
     desktop-file-utils
     dotnetCorePackages.dotnet_8.sdk

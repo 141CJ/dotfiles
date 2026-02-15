@@ -26,6 +26,7 @@ layer-rule {
     place-within-backdrop true
 }
 
+
 window-rule {
     match title="Steam Big Picture Mode"
     match at-startup=true
