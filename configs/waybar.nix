@@ -7,10 +7,21 @@
         position = "top";
         height = 30;
 
-        modules-left =
-          [ "custom/icon" "niri/workspaces" "niri/window" "custom/spotify" ];
-        modules-center = [ "clock" ];
-        modules-right = [ "pulseaudio" "memory" "cpu" "tray" ];
+        modules-left = [
+          "niri/workspaces"
+          "niri/window"
+        ];
+        modules-center = [
+          "custom/music"
+          "clock"
+        ];
+        modules-right = [
+          "pulseaudio"
+          "pulseaudio/slider"
+          "memory"
+          "cpu"
+          "tray"
+        ];
 
         "clock" = {
           format = "<b>󰥔  {:%H:%M:%S   󰃭  %m/%d/%Y}</b> ";
@@ -34,46 +45,49 @@
           max-length = 10;
         };
 
-        "niri/window" = { format = "  {}"; };
+        "niri/window" = {
+          format = "  {}";
+          max-length = 25;
+        };
 
-        "custom/icon" = { format = "󱄅 "; };
+        "custom/icon" = {
+          format = " ";
+        };
 
         "niri/workspaces" = {
           format = "{icon}";
           format-icons = {
-            active = "";
-            visible = "";
-            default = "";
-            empty = "";
+            active = "";
+            default = "";
           };
         };
 
         "pulseaudio" = {
           format = "{icon} <b>{volume}%</b>";
           format-muted = "󰝟 ";
-          format-icons = { default = [ "󰕿" "󰖀" "󰕾" ]; };
+          format-icons = {
+            default = [
+              "󰕿"
+              "󰖀"
+              "󰕾"
+            ];
+          };
+        };
+        "pulseaudio/slider" = {
+          min = 0;
+          max = 100;
+          orientation = "horizontal";
         };
 
         "tray" = {
           icon-size = 20;
           spacing = 10;
         };
-        "custom/spotify" = {
-          format = "{} ";
-          max-length = 60;
-          interval = "once";
+
+        "custom/music" = {
+          format = "{}";
           return-type = "json";
-          exec = "~/.config/waybar/spotifyctl.zsh";
-          on-click =
-            "playerctl --player=spotify play-pause && pkill -RTMIN+30 waybar";
-          on-click-right = "playerctl --player=spotify loop track";
-          on-scroll-down =
-            "playerctl --player=spotify previous && pkill -RTMIN+30 waybar";
-          on-scroll-up =
-            "playerctl --player=spotify next && pkill -RTMIN+30 waybar";
-          on-click-middle = "pkill --signal TERM spotify";
-          signal = 30;
-          smooth-scrolling-threshold = 1.0;
+          exec = ''waybar-module-music --format "%player-icon%%artist% - %title%" --marquee --title-width 15'';
         };
 
         "memory" = {
@@ -87,57 +101,67 @@
     style = ''
       * {
         font-family: "Overpass", "JetBrains Mono Nerd Font";
-        font-size: 18.0;
+        font-size: 20.0;
       }
 
       .modules-left {
-        background-color: @base01;
         padding-right: 5px;
         padding-left: 13px;
       }
 
       .modules-center {
-        background-color: @base01;
         padding-right: 5px;
         padding-left: 5px;
       }
 
       .modules-right {
-        background-color: @base01;
         padding-right: 5px;
         padding-left: 5px;
       }
 
-       #cpu, #memory, #pulseaudio, #custom-spotify, #custom-icon, #tray, #custom-notification {
-        border-radius: 18px;
+      #workspaces, #window, #clock, #cpu, #memory, #pulseaudio, #pulseaudio-slider, #custom-music, #tray {
+        color: #cba6f7;
+        background: #313244;
+        border-radius: 5px;
+        padding: 2px 5px;
+        margin: 4px 2px;
       }
 
-      #custom-icon {
-        color: @base0D;
+      #pulseaudio-slider {
+      background: #313244;
+      }
+
+      #pulseaudio-slider slider {
+        background-color: transparent;
+        box-shadow: none;
+      }
+
+      #pulseaudio-slider trough {
+        min-height: 10px;
+        min-width: 80px;
+        background: #11111b;
+      }
+
+      #pulseaudio-slider highlight {
+        min-width: 10px;
+        background: #cba6f7;
       }
 
       window#waybar {
-          background-color: @base01;
+          background-color: #1e1e2e;
       }
 
       #workspaces {
-        margin: 0px 1px 0px 1px;
         padding: 0px 1px;
       }
-
-      #workspaces button {
-        padding: 0px 2px;
-        margin: 4px 2px;
+      #workspaces button.focused label {
+        color: #cba6f7;
       }
+
 
       #clock {
         padding-left: 10px;
         font-weight: bold;
-      }
-
-      #cpu, #memory, #pulseaudio, #tray {
-        padding: 2px 5px;
-        margin: 4px 2px;
       }
 
     '';

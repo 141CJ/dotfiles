@@ -5,6 +5,10 @@
     catppuccin.url = "github:catppuccin/nix";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     stylix.url = "github:danth/stylix";
+    waybar-module-music = {
+      url = "github:Andeskjerf/waybar-module-music";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
@@ -28,6 +32,7 @@
       spicetify-nix,
       catppuccin,
       stylix,
+      waybar-module-music,
       ...
     }@inputs:
     let
@@ -47,6 +52,12 @@
           #inputs.nixvim.homeManagerModules.nixvim
           catppuccin.homeManagerModules.catppuccin
           stylix.homeManagerModules.stylix
+          (
+            { ... }:
+            {
+              nixpkgs.overlays = [ waybar-module-music.overlays.default ];
+            }
+          )
         ];
 
       };

@@ -10,5 +10,6 @@
     ./mangohud.nix
     ./alacritty.nix
     ./tmux.nix
+    ./swayosd
   ];
 }

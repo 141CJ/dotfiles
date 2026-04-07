@@ -38,8 +38,8 @@
   stylix.targets.librewolf.colorTheme.enable = true;
   stylix.targets.vesktop.enable = true;
   stylix.targets.helix.enable = false;
-  stylix.targets.waybar.enable = true;
-  stylix.targets.waybar.addCss = true;
+  stylix.targets.waybar.enable = false;
+  stylix.targets.waybar.addCss = false;
 
   gtk.enable = true;
 }

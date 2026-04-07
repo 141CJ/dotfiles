@@ -39,12 +39,20 @@ in
     # rofi
     kdePackages.kdenlive
     vscode
-    godot
     # protonvpn-gui
     openrgb-with-all-plugins
     lmms
     prismlauncher
     krita
+    stoat-desktop
+    qbittorrent
+    wget
+    aria2
+    unityhub
+    godot-mono
+    r2modman
+    blender
+    quickshell
   ];
 
   programs.obs-studio.enable = true;

@@ -22,7 +22,6 @@
     xfce.tumbler
     nix-init
     winetricks
-    wineWowPackages.full
     nil
     nixd
     xwayland
@@ -47,6 +46,11 @@
     desktop-file-utils
     dotnetCorePackages.dotnet_8.sdk
     omnisharp-roslyn
+    ntfs3g
+    zip
+    wine64
+    winetricks
+    waybar-module-music
   ];
 
 }
