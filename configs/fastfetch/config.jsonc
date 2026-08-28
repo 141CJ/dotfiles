@@ -1,0 +1,70 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "display": {
+    "key": {
+      "width": 10
+    },
+    "size": {
+      "binaryPrefix": "jedec"
+    },
+    "separator": ""
+  },
+  "logo": {
+    "type": "kitty-icat",
+    "source": "~/.config/home-manager/configs/fastfetch/nixos.png",
+    "width": 20,
+    "height": 10
+  },
+  "modules": [
+    "break",
+    {
+      "type": "os",
+      "key": "os",
+      "keyColor": "magenta",
+      "format": "{name}"
+    },
+    {
+      "type": "kernel",
+      "key": "ker",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "shell",
+      "key": "sh",
+      "keyColor": "magenta",
+      "format": "{pretty-name}"
+    },
+    {
+      "type": "wm",
+      "key": "wm",
+      "keyColor": "magenta",
+      "format": "{pretty-name}"
+    },
+    {
+      "type": "uptime",
+      "key": "up",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "memory",
+      "key": "ram",
+      "keyColor": "magenta",
+      "format": "{used} / {total}"
+    },
+    {
+      "type": "disk",
+      "key": "disk",
+      "keyColor": "magenta",
+      "folders": [
+        "/"
+      ],
+    },
+    {
+      "type": "disk",
+      "key": "games",
+      "keyColor": "magenta",
+      "folders": [ "/mnt/games"],
+    },
+    "break",
+  ]
+}

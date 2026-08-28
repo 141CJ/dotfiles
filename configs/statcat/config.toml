@@ -1,0 +1,82 @@
+[config]
+
+
+# Output of "statcat" command, words/letters contained in curly brackets are variables
+# which can be user defined.
+# See github for all pre defined variables.
+output = [
+  " ",
+  " ",
+  " ",
+  "{RD}    Username       {WE}{WE}{username}",
+  "{YW}    Hostname       {WE}{hostname}",
+  "{GN}    Distro         {WE}{os}",
+  "{CN}    Packages       {WE}{packages}, Flatpak: {flatpak}",
+  "{BE}  󱂬  Desktop        {WE}{desktop}",
+  "{MA}    Terminal       {WE}{terminal}",
+  "{RD}    Shell          {WE}{shell}",
+  "{YW}    CPU            {WE}{cpu}",
+  "{GN}    Memory         {WE}{used_mem_gb}GB/{total_mem_gb}GB",
+  "{CN}    Total Storage  {WE}{total_storage}GB",
+  "{BE}    Free Storage   {WE}{free_storage}GB",
+  "{MA}    Used Storage   {WE}{used_storage}GB",
+  "{RD}    Local IP       {WE}{ip}",
+  "{YW}    Uptime         {WE}{uptime}",
+  "{GN}    Colors         {WE}{BK}{CI}{RD}{CI}{YW}{CI}{GN}{CI}{CN}{CI}{BE}{CI}{MA}{CI}",
+]
+
+[general]
+figlet = false
+figlet_text = " Arch"
+# figlet_color cannot use variables, it must use either
+# an ansi color code (which the default color variables are set to)
+# or use a hex code.
+figlet_color = "\u001b[35m"
+
+
+# ASCII art must be under [general]
+# You can use your colors and variables defined under [variables]
+# If there is a backslash "\" there must be two or youll recieve an-
+# error, ex: "\\"
+# ASCII Art example:
+ascii = [
+"{BE}          ▗▄▄▄      {CN} ▗▄▄▄▄    ▄▄▄▖         {WE}   ", 
+"{BE}          ▜███▙      {CN} ▜███▙  ▟███▛         {WE}   ", 
+"{BE}           ▜███▙      {CN} ▜███▙▟███▛          {WE}   ", 
+"{BE}            ▜███▙      {CN} ▜██████▛           {WE}   ", 
+"{BE}     ▟█████████████████▙{CN} ▜████▛    {BE} ▟▙ {WE}       ", 
+"{BE}    ▟███████████████████▙{CN} ▜███▙   {BE} ▟██▙{WE}       ", 
+"{CN}           ▄▄▄▄▖          {CN} ▜███▙  {BE}▟███▛{WE}       ", 
+"{CN}          ▟███▛            {CN} ▜██▛ {BE}▟███▛ {WE}       ", 
+"{CN}         ▟███▛              {CN} ▜▛ {BE}▟███▛  {WE}       ", 
+"{CN}▟███████████▛                  {BE}▟██████████▙{WE}   ", 
+"{CN}▜██████████▛                  {BE}▟███████████▛{WE}   ", 
+"{CN}      ▟███▛ {BE}▟▙               {BE}▟███▛     {WE}       ", 
+"{CN}     ▟███▛ {BE}▟██▙             {BE}▟███▛      {WE}       ", 
+"{CN}    ▟███▛  {BE}▜███▙           {BE}▝▀▀▀▀       {WE}       ", 
+"{CN}    ▜██▛    {BE}▜███▙ {CN}▜██████████████████▛ {WE}       ", 
+"{CN}     ▜▛     {BE}▟████▙ {CN}▜████████████████▛  {WE}       ", 
+"{BE}           {BE}▟██████▙  {CN}     ▜███▙        {WE}       ", 
+"{BE}          {BE}▟███▛▜███▙  {CN}     ▜███▙       {WE}       ", 
+"{BE}         {BE}▟███▛  ▜███▙  {CN}     ▜███▙      {WE}       ", 
+"{BE}         {BE}▝▀▀▀    ▀▀▀▀▘  {CN}     ▀▀▀▘      {WE}       ", 
+]
+
+[variables]
+BK        = "\u001b[30m" # Black
+RD         = "\u001b[31m" # Red
+GN       = "\u001b[32m" # Green
+YW      = "\u001b[33m" # Yellow
+BE        = "\u001b[34m" # Blue
+MA     = "\u001b[35m" # Magenta
+CN        = "\u001b[36m" # Cyan
+WE       = "#ffffff" # White
+
+CI = "󰣏 " # Colors icon
+
+SEP = "├───────────────┤"
+# border icons: ╭ ╮ ─ │ ╰ ╯
+
+
+
+
