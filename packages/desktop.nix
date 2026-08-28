@@ -5,6 +5,7 @@
     awww
 
     firefox
+    legcord
     pavucontrol
     easyeffects
     vlc
