@@ -27,6 +27,7 @@
           format = "<b>󰥔  {:%H:%M:%S   󰃭  %m/%d/%Y}</b> ";
           format-alt = "<b>󰥔  {:%I:%M:%S %p   󰃭  %m/%d/%Y}</b> ";
           tooltip-format = "<tt>{calendar}</tt>";
+          interval = 1;
           calendar = {
             mode = "month";
             format = {
@@ -40,7 +41,7 @@
         };
 
         "cpu" = {
-          interval = 10;
+          interval = 5;
           format = " {usage}%";
           max-length = 10;
         };
@@ -91,7 +92,7 @@
         };
 
         "memory" = {
-          interval = 30;
+          interval = 5;
           format = " {used}GiB";
           max-length = 10;
         };
