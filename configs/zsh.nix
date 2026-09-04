@@ -23,7 +23,8 @@
     };
 
     shellAliases = {
-      ls = "lsd --long --date relative --header --blocks name,size,date";
+      # ls = "lsd --long --date relative --header --blocks name,size,date";
+      lsa = "ls -a";
       cd = "z";
       hmb = "home-manager switch --flake ~/.config/home-manager/#cj";
 

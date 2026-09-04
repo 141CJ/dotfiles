@@ -16,5 +16,6 @@
     ./tmux.nix
     ./swayosd
     ./stylix.nix
+    ./eza.nix
   ];
 }
