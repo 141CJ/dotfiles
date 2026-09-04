@@ -3,11 +3,13 @@
   home.packages = with pkgs; [
     gamescope
     awww
-
     firefox
-    legcord
+    obsidian
+    vesktop
     pavucontrol
     easyeffects
+    swaynotificationcenter
+    feh
     vlc
     gimp
     krita

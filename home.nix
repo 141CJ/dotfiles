@@ -24,6 +24,11 @@ in
     exec = "legcord --disable-gpu";
   };
 
+  xdg.desktopEntries.vesktop = {
+    name = "vesktop";
+    exec = "vesktop --ozone-platform-hint=auto";
+  };
+
   nix.package = pkgs.nix;
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
